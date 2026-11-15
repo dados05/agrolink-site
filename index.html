@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="pt" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroLink & Consultoria, EI | Ligando o campo ao desenvolvimento.</title>
+    <meta name="description" content="AgroLink & Consultoria, EI — Serviços integrados para um desenvolvimento sustentável nas áreas de agricultura, consultoria, educação, tecnologia e desenvolvimento comunitário em Moçambique.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome para Ícones Profissionais -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Biblioteca QRCode.js para gerar Código QR dinâmico -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <!-- Configuração Personalizada Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        agro: {
+                            dark: '#14452F',      // Verde Escuro Institucional
+                            primary: '#1B5E20',   // Verde Marca
+                            leaf: '#2E7D32',      // Verde Folha
+                            light: '#E8F5E9',     // Verde Suave de Fundo
+                            gold: '#C8962E',      // Dourado / Ocre da Marca
+                            goldLight: '#FDF8EC', // Fundo Dourado Suave
+                            orange: '#E66C00',    // Pilar Educação
+                            purple: '#5B2C82',    // Pilar Tecnologia
+                            teal: '#00695C',      // Pilar Desenvolvimento Comunitário
+                            burgundy: '#880E4F',  // Pilar Administração e Finanças
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 10px 30px -5px rgba(20, 69, 47, 0.08)',
+                        'card': '0 4px 20px -2px rgba(0, 0, 0, 0.06)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Estilos personalizados complementares */
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1F2937;
+            background-color: #FAFAFA;
+        }
+        h1, h2, h3, h4, .font-heading {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .hero-pattern {
+            background-color: #14452F;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(200, 150, 46, 0.18) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(46, 125, 50, 0.35) 0px, transparent 50%);
+        }
+        /* Linha conectora do organograma em desktop */
+        @media (min-width: 1024px) {
+            .org-branch-top::before {
+                content: '';
+                position: absolute;
+                top: -24px;
+                left: 50%;
+                width: 2px;
+                height: 24px;
+                background-color: #9CA3AF;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-agro-gold selection:text-white">
+
+    <!-- ================= BARRA DE NAVEGAÇÃO SUPERIOR ================= -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200/80 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                
+                <!-- Logótipo Vetorial Fiel à Identidade AgroLink -->
+                <a href="#inicio" class="flex items-center gap-3 group focus:outline-none">
+                    <!-- Ícone SVG personalizado (Folha Verde + Elo/Espiga Dourada) -->
+                    <div class="w-11 h-11 rounded-xl bg-agro-light flex items-center justify-center p-1.5 border border-agro-primary/20 group-hover:scale-105 transition-transform">
+                        <svg viewBox="0 0 64 64" class="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Logótipo AgroLink">
+                            <!-- Elo Verde Esquerdo / Folha -->
+                            <path d="M28 14C17.5 14 10 21.5 10 32C10 42.5 17.5 50 28 50H33V42H28C22 42 18 37.8 18 32C18 26.2 22 22 28 22H34V14H28Z" fill="#1B5E20"/>
+                            <path d="M16 32C16 25 22 19 30 19C28 26 23 31 16 32Z" fill="#2E7D32"/>
+                            <!-- Elo Dourado Direito / Espiga -->
+                            <path d="M36 14H31V22H36C42 22 46 26.2 46 32C46 37.8 42 42 36 42H30V50H36C46.5 50 54 42.5 54 32C54 21.5 46.5 14 36 14Z" fill="#C8962E"/>
+                            <!-- Grãos de cereal estilizados -->
+                            <ellipse cx="33" cy="28" rx="3" ry="5" transform="rotate(-30 33 28)" fill="#C8962E"/>
+                            <ellipse cx="38" cy="34" rx="3" ry="5" transform="rotate(-30 38 34)" fill="#C8962E"/>
+                            <ellipse cx="29" cy="36" rx="2.8" ry="4.5" transform="rotate(-30 29 36)" fill="#1B5E20"/>
+                        </svg>
+                    </div>
+                    <div class="flex flex-col">
+                        <div class="flex items-baseline gap-1 leading-none">
+                            <span class="font-heading font-extrabold text-xl sm:text-2xl tracking-tight text-agro-dark">Agro<span class="text-agro-gold">Link</span></span>
+                        </div>
+                        <span class="text-xs font-semibold text-gray-600 tracking-wide">&amp; Consultoria, EI</span>
+                    </div>
+                </a>
+
+                <!-- Menu Desktop -->
+                <nav class="hidden md:flex items-center space-x-7 text-sm font-medium text-gray-700">
+                    <a href="#inicio" class="hover:text-agro-primary transition-colors">Início</a>
+                    <a href="#identidade" class="hover:text-agro-primary transition-colors">Missão &amp; Valores</a>
+                    <a href="#areas" class="hover:text-agro-primary transition-colors">Áreas de Actuação</a>
+                    <a href="#organograma" class="hover:text-agro-primary transition-colors">Organograma</a>
+                    <a href="#contactos" class="hover:text-agro-primary transition-colors">Contactos</a>
+                </nav>
+
+                <!-- Botões de Acção Rápida (Desktop) -->
+                <div class="hidden md:flex items-center gap-3">
+                    <button onclick="openQrModal()" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold text-agro-dark bg-agro-light hover:bg-green-100 border border-agro-primary/20 transition-all cursor-pointer" title="Ver Código QR da Empresa">
+                        <i class="fa-solid fa-qrcode text-sm"></i>
+                        <span>QR Code</span>
+                    </button>
+                    <a href="#contactos" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-white bg-agro-primary hover:bg-agro-dark shadow-sm transition-all">
+                        <i class="fa-brands fa-whatsapp text-base"></i>
+                        <span>Falar Connosco</span>
+                    </a>
+                </div>
+
+                <!-- Botão Menu Mobile -->
+                <div class="flex items-center gap-2 md:hidden">
+                    <button onclick="openQrModal()" class="p-2.5 rounded-xl text-agro-dark bg-agro-light border border-agro-primary/20" aria-label="Abrir Código QR">
+                        <i class="fa-solid fa-qrcode text-lg"></i>
+                    </button>
+                    <button id="mobile-menu-btn" class="p-2.5 rounded-xl text-gray-700 hover:bg-gray-100 focus:outline-none" aria-label="Abrir Menu">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Mobile Expansível -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 pt-3 pb-5 space-y-2 shadow-lg">
+            <a href="#inicio" class="mobile-link block px-4 py-2.5 rounded-xl text-base font-medium text-gray-800 hover:bg-agro-light hover:text-agro-primary">Início</a>
+            <a href="#identidade" class="mobile-link block px-4 py-2.5 rounded-xl text-base font-medium text-gray-800 hover:bg-agro-light hover:text-agro-primary">Missão, Visão &amp; Valores</a>
+            <a href="#areas" class="mobile-link block px-4 py-2.5 rounded-xl text-base font-medium text-gray-800 hover:bg-agro-light hover:text-agro-primary">Áreas de Actuação (6 Pilares)</a>
+            <a href="#organograma" class="mobile-link block px-4 py-2.5 rounded-xl text-base font-medium text-gray-800 hover:bg-agro-light hover:text-agro-primary">Organograma Institucional</a>
+            <a href="#contactos" class="mobile-link block px-4 py-2.5 rounded-xl text-base font-medium text-gray-800 hover:bg-agro-light hover:text-agro-primary">Contactos &amp; Cartão Digital</a>
+            <div class="pt-2">
+                <a href="#contactos" class="mobile-link flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-agro-primary text-white font-semibold shadow-sm">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Contactar via WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= SECÇÃO HERO / APRESENTAÇÃO ================= -->
+    <section id="inicio" class="hero-pattern text-white relative overflow-hidden">
+        <!-- Detalhe decorativo inferior -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 lg:py-24 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                
+                <!-- Coluna de Texto Principal -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-amber-300 text-xs sm:text-sm font-semibold tracking-wide backdrop-blur-sm">
+                        <i class="fa-solid fa-seedling"></i>
+                        <span>Consultoria • Agricultura • Educação • Tecnologia</span>
+                    </div>
+
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                        Agro<span class="text-agro-gold">Link</span> &amp; Consultoria, EI
+                    </h1>
+
+                    <p class="text-xl sm:text-2xl font-medium text-amber-200/95 italic">
+                        “Ligando o campo ao desenvolvimento.”
+                    </p>
+
+                    <p class="text-base sm:text-lg text-gray-200 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Serviços integrados para um desenvolvimento sustentável em Moçambique — unindo conhecimento técnico, inovação, inclusão social e capacitação institucional para comunidades, produtores e organizações.
+                    </p>
+
+                    <!-- Botões Principais (Otimizados para Toque Mobile) -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#areas" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-agro-gold hover:bg-amber-600 text-white font-bold text-base shadow-lg transition-all">
+                            <span>Explorar Nossos Serviços</span>
+                            <i class="fa-solid fa-arrow-down text-sm"></i>
+                        </a>
+                        <button onclick="downloadVCard()" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/25 font-semibold text-base backdrop-blur-sm transition-all cursor-pointer">
+                            <i class="fa-solid fa-address-card text-amber-300"></i>
+                            <span>Guardar Contacto (vCard)</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Cartão Resumo de Impacto (Direita) -->
+                <div class="lg:col-span-5">
+                    <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6">
+                        <div class="flex items-center justify-between border-b border-white/15 pb-4">
+                            <div>
+                                <p class="text-xs uppercase tracking-wider text-amber-300 font-bold">Compromisso Institucional</p>
+                                <h2 class="text-lg font-bold text-white mt-0.5">Pilares de Transformação</h2>
+                            </div>
+                            <span class="w-10 h-10 rounded-xl bg-agro-gold/20 border border-agro-gold/40 flex items-center justify-center text-amber-300">
+                                <i class="fa-solid fa-leaf text-lg"></i>
+                            </span>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-3.5">
+                            <div class="bg-white/10 rounded-2xl p-4 border border-white/10">
+                                <i class="fa-solid fa-wheat-awn text-amber-300 text-xl mb-2"></i>
+                                <p class="font-bold text-sm sm:text-base">Mais produção</p>
+                                <p class="text-xs text-gray-300 mt-1">Produtividade e segurança alimentar</p>
+                            </div>
+                            <div class="bg-white/10 rounded-2xl p-4 border border-white/10">
+                                <i class="fa-solid fa-book-open text-amber-300 text-xl mb-2"></i>
+                                <p class="font-bold text-sm sm:text-base">Mais educação</p>
+                                <p class="text-xs text-gray-300 mt-1">Formação e capacitação contínua</p>
+                            </div>
+                            <div class="bg-white/10 rounded-2xl p-4 border border-white/10">
+                                <i class="fa-solid fa-people-group text-amber-300 text-xl mb-2"></i>
+                                <p class="font-bold text-sm sm:text-base">Mais inclusão</p>
+                                <p class="text-xs text-gray-300 mt-1">Equidade de género e oportunidades</p>
+                            </div>
+                            <div class="bg-white/10 rounded-2xl p-4 border border-white/10">
+                                <i class="fa-solid fa-chart-line text-amber-300 text-xl mb-2"></i>
+                                <p class="font-bold text-sm sm:text-base">Mais desenvolvimento</p>
+                                <p class="text-xs text-gray-300 mt-1">Crescimento económico sustentável</p>
+                            </div>
+                        </div>
+
+                        <div class="pt-1 flex items-center justify-between text-xs text-gray-200">
+                            <span><i class="fa-solid fa-location-dot text-amber-300 mr-1.5"></i>Moçambique</span>
+                            <button onclick="openQrModal()" class="text-amber-300 hover:underline font-semibold cursor-pointer">
+                                <i class="fa-solid fa-qrcode mr-1"></i>Partilhar QR Code
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- Faixa Dourada de Transição -->
+        <div class="h-2 bg-gradient-to-r from-agro-primary via-agro-gold to-agro-primary"></div>
+    </section>
+
+    <!-- ================= SECÇÃO MISSÃO, VISÃO E VALORES ================= -->
+    <section id="identidade" class="py-16 sm:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+                <span class="inline-block px-3.5 py-1 rounded-full bg-agro-light text-agro-primary text-xs font-bold uppercase tracking-wider mb-3">
+                    Identidade Institucional
+                </span>
+                <h2 class="text-2xl sm:text-4xl font-extrabold text-agro-dark">
+                    Quem Somos e o Que Nos Move
+                </h2>
+                <p class="text-gray-600 mt-3 text-sm sm:text-base">
+                    A nossa actuação é guiada por princípios sólidos de excelência técnica, ética e compromisso com o desenvolvimento sustentável das comunidades.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                
+                <!-- Card 1: Nossa Missão -->
+                <div class="bg-agro-light/60 rounded-3xl p-7 sm:p-8 border border-agro-primary/15 shadow-soft flex flex-col justify-between hover:-translate-y-1 transition-transform">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-agro-primary text-white flex items-center justify-center text-2xl shadow-md mb-6">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-agro-dark mb-4">Nossa Missão</h3>
+                        <p class="text-gray-700 leading-relaxed text-sm sm:text-base">
+                            Prestar serviços de consultoria, assistência técnica, formação e desenvolvimento de soluções inovadoras nas áreas de agricultura, educação, gestão e desenvolvimento comunitário, promovendo a sustentabilidade, a inclusão social e o crescimento económico.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-agro-primary/10 flex items-center gap-2 text-xs font-semibold text-agro-primary">
+                        <i class="fa-solid fa-check-circle"></i>
+                        <span>Impacto directo no terreno</span>
+                    </div>
+                </div>
+
+                <!-- Card 2: Nossa Visão -->
+                <div class="bg-agro-goldLight rounded-3xl p-7 sm:p-8 border border-agro-gold/25 shadow-soft flex flex-col justify-between hover:-translate-y-1 transition-transform">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-agro-gold text-white flex items-center justify-center text-2xl shadow-md mb-6">
+                            <i class="fa-solid fa-binoculars"></i>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-agro-dark mb-4">Nossa Visão</h3>
+                        <p class="text-gray-700 leading-relaxed text-sm sm:text-base">
+                            Ser uma empresa de referência em Moçambique na prestação de serviços integrados de consultoria, desenvolvimento agrário, educação e assistência técnica, contribuindo para o desenvolvimento sustentável das comunidades e organizações.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-agro-gold/20 flex items-center gap-2 text-xs font-semibold text-amber-800">
+                        <i class="fa-solid fa-award"></i>
+                        <span>Referência nacional em serviços integrados</span>
+                    </div>
+                </div>
+
+                <!-- Card 3: Nossos Valores -->
+                <div class="bg-gray-50 rounded-3xl p-7 sm:p-8 border border-gray-200/90 shadow-soft flex flex-col justify-between hover:-translate-y-1 transition-transform">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-agro-dark text-white flex items-center justify-center text-2xl shadow-md mb-6">
+                            <i class="fa-solid fa-gem"></i>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-agro-dark mb-4">Nossos Valores</h3>
+                        <ul class="space-y-3 text-gray-700 text-sm sm:text-base">
+                            <li class="flex items-start gap-3">
+                                <span class="w-5 h-5 rounded-full bg-agro-primary/15 text-agro-primary flex items-center justify-center text-xs mt-0.5 shrink-0"><i class="fa-solid fa-check"></i></span>
+                                <span>Integridade e transparência</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="w-5 h-5 rounded-full bg-agro-primary/15 text-agro-primary flex items-center justify-center text-xs mt-0.5 shrink-0"><i class="fa-solid fa-check"></i></span>
+                                <span>Excelência e profissionalismo</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="w-5 h-5 rounded-full bg-agro-primary/15 text-agro-primary flex items-center justify-center text-xs mt-0.5 shrink-0"><i class="fa-solid fa-check"></i></span>
+                                <span>Inovação e criatividade</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="w-5 h-5 rounded-full bg-agro-primary/15 text-agro-primary flex items-center justify-center text-xs mt-0.5 shrink-0"><i class="fa-solid fa-check"></i></span>
+                                <span>Igualdade de género e inclusão</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="w-5 h-5 rounded-full bg-agro-primary/15 text-agro-primary flex items-center justify-center text-xs mt-0.5 shrink-0"><i class="fa-solid fa-check"></i></span>
+                                <span>Sustentabilidade ambiental</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="w-5 h-5 rounded-full bg-agro-primary/15 text-agro-primary flex items-center justify-center text-xs mt-0.5 shrink-0"><i class="fa-solid fa-check"></i></span>
+                                <span>Responsabilidade social</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="w-5 h-5 rounded-full bg-agro-primary/15 text-agro-primary flex items-center justify-center text-xs mt-0.5 shrink-0"><i class="fa-solid fa-check"></i></span>
+                                <span>Valorização do conhecimento local</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SECÇÃO ÁREAS DE ACTUAÇÃO (6 PILARES) ================= -->
+    <section id="areas" class="py-16 sm:py-24 bg-gray-50 border-t border-gray-200/70">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Cabeçalho da Secção -->
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <span class="inline-block px-3.5 py-1 rounded-full bg-agro-gold/15 text-amber-800 text-xs font-bold uppercase tracking-wider mb-3">
+                    Portfólio Completo de Serviços
+                </span>
+                <h2 class="text-2xl sm:text-4xl font-extrabold text-agro-dark">
+                    Áreas de Actuação
+                </h2>
+                <p class="text-lg font-medium text-agro-primary mt-2">
+                    Serviços integrados para um desenvolvimento sustentável.
+                </p>
+            </div>
+
+            <!-- Barra de Filtro Rápido / Pesquisa de Serviços (Ideal para Mobile) -->
+            <div class="max-w-xl mx-auto mb-12">
+                <div class="relative">
+                    <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                    <input 
+                        type="text" 
+                        id="service-search" 
+                        placeholder="Pesquisar um serviço (ex: planos de negócios, avicultura, formação, dados...)" 
+                        class="w-full pl-11 pr-4 py-3.5 rounded-2xl bg-white border border-gray-200 text-sm text-gray-800 shadow-sm focus:outline-none focus:ring-2 focus:ring-agro-primary focus:border-transparent"
+                    >
+                </div>
+            </div>
+
+            <!-- Grelha dos 6 Pilares / Departamentos -->
+            <div id="pillars-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+                
+                <!-- PILAR 1: Consultoria e Gestão (Verde Escuro) -->
+                <article class="pillar-card bg-white rounded-3xl overflow-hidden shadow-card border border-gray-100 flex flex-col justify-between transition-all hover:shadow-xl">
+                    <div>
+                        <div class="bg-[#1B5E20] p-6 text-white">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="w-11 h-11 rounded-xl bg-white/15 flex items-center justify-center text-xl">
+                                    <i class="fa-solid fa-users-gear"></i>
+                                </span>
+                                <span class="text-xs font-bold uppercase tracking-wider bg-white/15 px-2.5 py-1 rounded-lg">Área 01</span>
+                            </div>
+                            <h3 class="text-xl font-bold leading-snug">Consultoria e Gestão</h3>
+                            <p class="text-xs sm:text-sm text-green-100 mt-1.5">Negócios, projectos e soluções estratégicas.</p>
+                        </div>
+                        <div class="p-6 bg-[#F2F8F3]/60 flex-grow">
+                            <ul class="space-y-2.5 text-sm text-gray-700">
+                                <li class="flex items-start gap-2.5"><span class="text-[#1B5E20] font-bold">•</span><span>Consultoria empresarial e organizacional</span></li>
+                                <li class="flex items-start gap-2.5"><span class="text-[#1B5E20] font-bold">•</span><span>Planos de negócios e estudos de viabilidade</span></li>
+                                <li class="flex items-start gap-2.5"><span class="text-[#1B5E20] font-bold">•</span><span>Gestão de projectos</span></li>
+                                <li class="flex items-start gap-2.5"><span class="text-[#1B5E20] font-bold">•</span><span>Planeamento estratégico</span></li>
+                                <li class="flex items-start gap-2.5"><span class="text-[#1B5E20] font-bold">•</span><span>Recursos humanos e capacitação institucional</span></li>
+                                <li class="flex items-start gap-2.5"><span class="text-[#1B5E20] font-bold">•</span><span>Organização de eventos (feiras, congressos, workshops e seminários)</span></li>
+                                <li class="flex items-start gap-2.5"><span class="text-[#1B5E20] font-bold">•</span><span>Consultoria científica, técnica e especializada</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="px-6 py-4 bg-white border-t border-gray-100">
+                        <button onclick="inquireArea('Consultoria e Gestão')" class="w-full py-2.5 px-4 rounded-xl bg-[#1B5E20]/10 hover:bg-[#1B5E20] text-[#1B5E20] hover:text-white font-semibold text-xs sm:text-sm transition-colors flex items-center justify-center gap-2 cursor-pointer">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <span>Solicitar Consultoria nesta Área</span>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- PILAR 2: Agricultura, Agronegócio e Produção Animal (Dourado/Ocre) -->
+                <article class="pillar-card bg-white rounded-3xl overflow-hidden shadow-card border border-gray-100 flex flex-col justify-between transition-all hover:shadow-xl">
+                    <div>
+                        <div class="bg-[#C8962E] p-6 text-white">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="w-11 h-11 rounded-xl bg-white/20 flex items-center justify-center text-xl">
+                                    <i class="fa-solid fa-seedling"></i>
+                                </span>
+                                <span class="text-xs font-bold uppercase tracking-wider bg-white/20 px-2.5 py-1 rounded-lg">Área 02</span>
+                            </div>
+                            <h3 class="text-xl font-bold leading-snug">Agricultura, Agronegócio e Produção Animal</h3>
+                            <p class="text-xs sm:text-sm text-amber-50 mt-1.5">Produtividade, segurança alimentar e cadeias de valor.</p>
+                        </div>
+                        <div class="p-6 bg-[#FDF8EC]/70 flex-grow">
+                            <ul class="space-y-2.5 text-sm text-gray-700">
+                                <li class="flex items-start gap-2.5"><span class="text-[#C8962E] font-bold">•</span><span>Assistência técnica agrícola</span></li>
+                                <li class="flex items-start gap-2.5"><span class="text-[#C8962E] font-bold">•</span><span>Organização de produtores e cooperativas</span></li>
+                                <li class="flex items-start gap-2.5"><span class="text-[#C8962E] font-bold">•</span><span>Ligação entre produtores e mercados</span></li>
+                                <li class="flex items-start gap-2.5"><span class="text-[#C8962E] font-bold">•</span><span>Promoção de práticas sustentáveis</span></li>
+                                <li class="flex items-start gap-2.5"><span class="text-[#C8962E] font-bold">•</span><span>Desenvolvimento de cadeias de valor</span></li>
+                                <li class="flex items-start gap-2.5"><span class="text-[#C8962E] font-bold">•</span><span>Avicultura</span></li>
+                                <li class="flex items-start gap-2.5"><span class="text-[#C8962E] font-bold">•</span><span>Ovinocultura e caprinocultura</span></li>
+                                <li class="flex items-start gap-2.5"><span class="text-[#C8962E] font-bold">•</span><span>Suinocultura</span></li>
+                                <li class="flex items-start gap-2.5"><span class="text-[#C8962E] font-bold">•</span><span>Outras produções animais (n.e)</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="px-6 py-4 bg-white border-t border-gray-100">
+                        <button onclick="inquireArea('Agricultura, Agronegócio e Produção Animal')" class="w-full py-2.5 px-4 rounded-xl bg-[#C8962E]/15 hover:bg-[#C8962E] text-amber-900 hover:text-white font-semibold text-xs sm:text-sm transition-colors flex items-center justify-center gap-2 cursor-pointer">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <span>Solicitar Assistência Agrária</span>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- PILAR 3: Educação, Formação e Desenvolvimento de Capacidades (Laranja) -->
+                <article class="pillar-card bg-white rounded-3xl overflow-hidden shadow-card border border-gray-100 flex flex-col justify-between transition-all hover:shadow-xl">
+                    <div>
+                        <div class="bg-[#E66C00] p-6 text-white">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="w-11 h-11 rounded-xl bg-white/20 flex items-center justify-center text-xl">
+                                    <i class="fa-solid fa-book-open-reader"></i>
+                                </span>
+                                <span class="text-xs font-bold uppercase tracking-wider bg-white/20 px-2.5 py-1 rounded-lg">Área 03</span>
+                            </div>
+                            <h3 class="text-xl font-bold leading-snug">Educação, Formação e Desenvolvimento de Capacidades</h3>
+                            <p class="text-xs sm:text-sm text-orange-100 mt-1.5">Educação inclusiva, formação e aprendizagem ao longo da vida.</p>
+                        </div>
+                        <div class="p-6 bg-[#FFF5EB]/70 flex-grow">
+                            <ul class="space-y-2.5 text-sm text-gray-700">
+                                <li class="flex items-start gap-2.5"><span class="text-[#E66C00] font-bold">•</span><span>Consultoria em educação</span></li>
+                                <li class="flex items-start gap-2.5"><span class="text-[#E66C00] font-bold">•</span><span>Educação inclusiva e necessidades específicas</span></li>
+                                <li class="flex items-start gap-2.5"><span class="text-[#E66C00] font-bold">•</span><span>Formação profissional e empreendedorismo</span></li>
+                                <li class="flex items-start gap-2.5"><span class="text-[#E66C00] font-bold">•</span><span>Educação comunitária</span></li>
+                                <li class="flex items-start gap-2.5"><span class="text-[#E66C00] font-bold">•</span><span>Pesquisa e avaliação educacional</span></li>
+                                <li class="flex items-start gap-2.5"><span class="text-[#E66C00] font-bold">•</span><span>Produção de materiais didáticos</span></li>
+                                <li class="flex items-start gap-2.5"><span class="text-[#E66C00] font-bold">•</span><span>Formação de professores e educadores</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="px-6 py-4 bg-white border-t border-gray-100">
+                        <button onclick="inquireArea('Educação, Formação e Desenvolvimento de Capacidades')" class="w-full py-2.5 px-4 rounded-xl bg-[#E66C00]/15 hover:bg-[#E66C00] text-orange-900 hover:text-white font-semibold text-xs sm:text-sm transition-colors flex items-center justify-center gap-2 cursor-pointer">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <span>Solicitar Formação / Consultoria</span>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- PILAR 4: Tecnologia, Inovação e Serviços Técnicos (Roxo/Índigo) -->
+                <article class="pillar-card bg-white rounded-3xl overflow-hidden shadow-card border border-gray-100 flex flex-col justify-between transition-all hover:shadow-xl">
+                    <div>
+                        <div class="bg-[#5B2C82] p-6 text-white">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="w-11 h-11 rounded-xl bg-white/20 flex items-center justify-center text-xl">
+                                    <i class="fa-solid fa-laptop-code"></i>
+                                </span>
+                                <span class="text-xs font-bold uppercase tracking-wider bg-white/20 px-2.5 py-1 rounded-lg">Área 04</span>
+                            </div>
+                            <h3 class="text-xl font-bold leading-snug">Tecnologia, Inovação e Serviços Técnicos</h3>
+                            <p class="text-xs sm:text-sm text-purple-100 mt-1.5">Digitalização, análise e conhecimento para melhores decisões.</p>
+                        </div>
+                        <div class="p-6 bg-[#F6F1FA]/80 flex-grow flex flex-col justify-between">
+                            <ul class="space-y-2.5 text-sm text-gray-700">
+                                <li class="flex items-start gap-2.5"><span class="text-[#5B2C82] font-bold">•</span><span>Consultoria em transformação digital</span></li>
+                                <li class="flex items-start gap-2.5"><span class="text-[#5B2C82] font-bold">•</span><span>Programação e soluções informáticas</span></li>
+                                <li class="flex items-start gap-2.5"><span class="text-[#5B2C82] font-bold">•</span><span>Apoio à gestão de dados e sistemas</span></li>
+                                <li class="flex items-start gap-2.5"><span class="text-[#5B2C82] font-bold">•</span><span>Ensaios e análises técnicas*</span></li>
+                                <li class="flex items-start gap-2.5"><span class="text-[#5B2C82] font-bold">•</span><span>Estudos e levantamentos de campo</span></li>
+                                <li class="flex items-start gap-2.5"><span class="text-[#5B2C82] font-bold">•</span><span>Consultoria científica e técnica</span></li>
+                            </ul>
+                            <p class="text-[11px] text-gray-500 italic mt-4 pt-2 border-t border-purple-200/60">
+                                *Sujeito a requisitos técnicos e legais aplicáveis.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-6 py-4 bg-white border-t border-gray-100">
+                        <button onclick="inquireArea('Tecnologia, Inovação e Serviços Técnicos')" class="w-full py-2.5 px-4 rounded-xl bg-[#5B2C82]/10 hover:bg-[#5B2C82] text-[#5B2C82] hover:text-white font-semibold text-xs sm:text-sm transition-colors flex items-center justify-center gap-2 cursor-pointer">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <span>Solicitar Soluções Tecnológicas</span>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- PILAR 5: Desenvolvimento Comunitário, Género e Inclusão Social (Verde Água/Teal) -->
+                <article class="pillar-card bg-white rounded-3xl overflow-hidden shadow-card border border-gray-100 flex flex-col justify-between transition-all hover:shadow-xl">
+                    <div>
+                        <div class="bg-[#00695C] p-6 text-white">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="w-11 h-11 rounded-xl bg-white/20 flex items-center justify-center text-xl">
+                                    <i class="fa-solid fa-hands-holding-circle"></i>
+                                </span>
+                                <span class="text-xs font-bold uppercase tracking-wider bg-white/20 px-2.5 py-1 rounded-lg">Área 05</span>
+                            </div>
+                            <h3 class="text-xl font-bold leading-snug">Desenvolvimento Comunitário, Género e Inclusão Social</h3>
+                            <p class="text-xs sm:text-sm text-teal-100 mt-1.5">Pessoas, comunidades e oportunidades para todos.</p>
+                        </div>
+                        <div class="p-6 bg-[#EBF7F5]/80 flex-grow">
+                            <ul class="space-y-2.5 text-sm text-gray-700">
+                                <li class="flex items-start gap-2.5"><span class="text-[#00695C] font-bold">•</span><span>Projectos de desenvolvimento comunitário</span></li>
+                                <li class="flex items-start gap-2.5"><span class="text-[#00695C] font-bold">•</span><span>Igualdade de género e empoderamento económico</span></li>
+                                <li class="flex items-start gap-2.5"><span class="text-[#00695C] font-bold">•</span><span>Inclusão de pessoas com deficiência</span></li>
+                                <li class="flex items-start gap-2.5"><span class="text-[#00695C] font-bold">•</span><span>Fortalecimento institucional</span></li>
+                                <li class="flex items-start gap-2.5"><span class="text-[#00695C] font-bold">•</span><span>Protecção da criança e prevenção da violência baseada no género</span></li>
+                                <li class="flex items-start gap-2.5"><span class="text-[#00695C] font-bold">•</span><span>Resiliência comunitária</span></li>
+                                <li class="flex items-start gap-2.5"><span class="text-[#00695C] font-bold">•</span><span>Grupos de poupança e empreendedorismo local</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="px-6 py-4 bg-white border-t border-gray-100">
+                        <button onclick="inquireArea('Desenvolvimento Comunitário, Género e Inclusão Social')" class="w-full py-2.5 px-4 rounded-xl bg-[#00695C]/10 hover:bg-[#00695C] text-[#00695C] hover:text-white font-semibold text-xs sm:text-sm transition-colors flex items-center justify-center gap-2 cursor-pointer">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <span>Falar sobre Projectos Sociais</span>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- PILAR 6: Administração, Finanças e Serviços Corporativos (Bordô/Magenta Escuro) -->
+                <article class="pillar-card bg-white rounded-3xl overflow-hidden shadow-card border border-gray-100 flex flex-col justify-between transition-all hover:shadow-xl">
+                    <div>
+                        <div class="bg-[#880E4F] p-6 text-white">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="w-11 h-11 rounded-xl bg-white/20 flex items-center justify-center text-xl">
+                                    <i class="fa-solid fa-gear"></i>
+                                </span>
+                                <span class="text-xs font-bold uppercase tracking-wider bg-white/20 px-2.5 py-1 rounded-lg">Área 06</span>
+                            </div>
+                            <h3 class="text-xl font-bold leading-snug">Administração, Finanças e Serviços Corporativos</h3>
+                            <p class="text-xs sm:text-sm text-pink-100 mt-1.5">Gestão eficiente para um melhor desempenho.</p>
+                        </div>
+                        <div class="p-6 bg-[#FCEFF5]/70 flex-grow">
+                            <ul class="space-y-2.5 text-sm text-gray-700">
+                                <li class="flex items-start gap-2.5"><span class="text-[#880E4F] font-bold">•</span><span>Gestão administrativa</span></li>
+                                <li class="flex items-start gap-2.5"><span class="text-[#880E4F] font-bold">•</span><span>Controlo financeiro e orçamental</span></li>
+                                <li class="flex items-start gap-2.5"><span class="text-[#880E4F] font-bold">•</span><span>Gestão de contratos</span></li>
+                                <li class="flex items-start gap-2.5"><span class="text-[#880E4F] font-bold">•</span><span>Recursos humanos</span></li>
+                                <li class="flex items-start gap-2.5"><span class="text-[#880E4F] font-bold">•</span><span>Logística e aquisições</span></li>
+                                <li class="flex items-start gap-2.5"><span class="text-[#880E4F] font-bold">•</span><span>Propostas comerciais</span></li>
+                                <li class="flex items-start gap-2.5"><span class="text-[#880E4F] font-bold">•</span><span>Facturação e acompanhamento de pagamentos</span></li>
+                                <li class="flex items-start gap-2.5"><span class="text-[#880E4F] font-bold">•</span><span>Gestão de fornecedores</span></li>
+                                <li class="flex items-start gap-2.5"><span class="text-[#880E4F] font-bold">•</span><span>Arquivo e documentação</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="px-6 py-4 bg-white border-t border-gray-100">
+                        <button onclick="inquireArea('Administração, Finanças e Serviços Corporativos')" class="w-full py-2.5 px-4 rounded-xl bg-[#880E4F]/10 hover:bg-[#880E4F] text-[#880E4F] hover:text-white font-semibold text-xs sm:text-sm transition-colors flex items-center justify-center gap-2 cursor-pointer">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <span>Solicitar Apoio Corporativo</span>
+                        </button>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- Mensagem quando pesquisa não encontra resultados -->
+            <div id="no-results" class="hidden text-center py-10">
+                <p class="text-gray-500 font-medium">Nenhum serviço encontrado com esse termo. Tente outra palavra-chave.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SECÇÃO ORGANOGRAMA INSTITUCIONAL ================= -->
+    <section id="organograma" class="py-16 sm:py-24 bg-white border-t border-gray-200/70">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+                <span class="inline-block px-3.5 py-1 rounded-full bg-agro-light text-agro-primary text-xs font-bold uppercase tracking-wider mb-3">
+                    Estrutura Organizacional
+                </span>
+                <h2 class="text-2xl sm:text-4xl font-extrabold text-agro-dark">
+                    Organograma Institucional
+                </h2>
+                <p class="text-gray-600 mt-2 font-medium">
+                    AgroLink &amp; Consultoria, EI — <span class="italic text-agro-primary">Ligando o campo ao desenvolvimento.</span>
+                </p>
+            </div>
+
+            <!-- Diagrama Hierárquico Responsivo -->
+            <div class="flex flex-col items-center">
+                
+                <!-- Nível 1: Direcção Executiva -->
+                <div class="w-full max-w-md bg-agro-dark text-white rounded-2xl p-5 sm:p-6 shadow-lg border-2 border-agro-gold/50 text-center relative">
+                    <div class="w-12 h-12 rounded-full bg-white/15 mx-auto mb-3 flex items-center justify-center text-xl text-amber-300">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold">Direcção Executiva</h3>
+                    <p class="text-xs sm:text-sm text-gray-200 mt-1.5">
+                        Liderança estratégica, representação institucional e mobilização de recursos.
+                    </p>
+                </div>
+
+                <!-- Linha Vertical -->
+                <div class="w-0.5 h-7 bg-gray-400"></div>
+
+                <!-- Nível 2: Secretariado da Direcção -->
+                <div class="w-full max-w-sm bg-[#F5E6C4] border border-agro-gold/60 text-agro-dark rounded-2xl p-4 shadow-sm text-center relative">
+                    <div class="flex items-center justify-center gap-2.5">
+                        <i class="fa-solid fa-file-signature text-amber-800 text-lg"></i>
+                        <h4 class="font-bold text-base">Secretariado da Direcção</h4>
+                    </div>
+                    <p class="text-xs text-gray-700 mt-1">Apoio administrativo e de agenda.</p>
+                </div>
+
+                <!-- Linha Vertical + Barra Horizontal Desktop -->
+                <div class="w-0.5 h-7 bg-gray-400"></div>
+                <div class="hidden lg:block w-10/12 h-0.5 bg-gray-400"></div>
+
+                <!-- Nível 3: As 6 Direções Operacionais -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4 w-full mt-4 lg:mt-6">
+                    
+                    <div class="relative org-branch-top bg-[#1B5E20] text-white rounded-2xl p-4 shadow-md text-center flex flex-col justify-center">
+                        <i class="fa-solid fa-users-gear text-lg mb-2 opacity-90"></i>
+                        <h5 class="font-bold text-xs sm:text-sm leading-snug">Consultoria e Gestão</h5>
+                    </div>
+
+                    <div class="relative org-branch-top bg-[#C8962E] text-white rounded-2xl p-4 shadow-md text-center flex flex-col justify-center">
+                        <i class="fa-solid fa-seedling text-lg mb-2 opacity-90"></i>
+                        <h5 class="font-bold text-xs sm:text-sm leading-snug">Agricultura, Agronegócio e Produção Animal</h5>
+                    </div>
+
+                    <div class="relative org-branch-top bg-[#E66C00] text-white rounded-2xl p-4 shadow-md text-center flex flex-col justify-center">
+                        <i class="fa-solid fa-book-open text-lg mb-2 opacity-90"></i>
+                        <h5 class="font-bold text-xs sm:text-sm leading-snug">Educação, Formação e Desenvolvimento de Capacidades</h5>
+                    </div>
+
+                    <div class="relative org-branch-top bg-[#5B2C82] text-white rounded-2xl p-4 shadow-md text-center flex flex-col justify-center">
+                        <i class="fa-solid fa-microchip text-lg mb-2 opacity-90"></i>
+                        <h5 class="font-bold text-xs sm:text-sm leading-snug">Tecnologia, Inovação e Serviços Técnicos</h5>
+                    </div>
+
+                    <div class="relative org-branch-top bg-[#00695C] text-white rounded-2xl p-4 shadow-md text-center flex flex-col justify-center">
+                        <i class="fa-solid fa-people-group text-lg mb-2 opacity-90"></i>
+                        <h5 class="font-bold text-xs sm:text-sm leading-snug">Desenvolvimento Comunitário, Género e Inclusão Social</h5>
+                    </div>
+
+                    <div class="relative org-branch-top bg-[#880E4F] text-white rounded-2xl p-4 shadow-md text-center flex flex-col justify-center">
+                        <i class="fa-solid fa-gear text-lg mb-2 opacity-90"></i>
+                        <h5 class="font-bold text-xs sm:text-sm leading-snug">Administração, Finanças e Serviços Corporativos</h5>
+                    </div>
+
+                </div>
+
+                <!-- Setas ascendentes (Representação Visual de Suporte) -->
+                <div class="flex justify-around w-full max-w-4xl py-3 text-gray-400 text-sm">
+                    <i class="fa-solid fa-arrow-up"></i>
+                    <i class="fa-solid fa-arrow-up"></i>
+                    <i class="fa-solid fa-arrow-up"></i>
+                    <i class="fa-solid fa-arrow-up hidden sm:inline"></i>
+                    <i class="fa-solid fa-arrow-up hidden sm:inline"></i>
+                    <i class="fa-solid fa-arrow-up hidden sm:inline"></i>
+                </div>
+
+                <!-- Nível 4: Base de Apoio (Consultores e Parceiros Externos) -->
+                <div class="w-full max-w-4xl bg-gray-100 border border-gray-300 rounded-2xl p-5 text-center shadow-sm">
+                    <div class="flex items-center justify-center gap-2 text-agro-dark font-bold text-base sm:text-lg">
+                        <i class="fa-solid fa-handshake text-agro-primary"></i>
+                        <h4>Consultores e Parceiros Externos</h4>
+                    </div>
+                    <p class="text-xs sm:text-sm text-gray-600 mt-1">
+                        Profissionais especializados, instituições e empresas parceiras para reforçar a capacidade técnica da empresa.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SECÇÃO DE CONTACTO RÁPIDO & CARTÃO DIGITAL ================= -->
+    <section id="contactos" class="py-16 sm:py-24 bg-agro-light/50 border-t border-agro-primary/15">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+                
+                <!-- Coluna Esquerda: Informações & Acções de Cartão Digital -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div>
+                        <span class="inline-block px-3.5 py-1 rounded-full bg-agro-primary/10 text-agro-primary text-xs font-bold uppercase tracking-wider mb-3">
+                            Atendimento Directo
+                        </span>
+                        <h2 class="text-2xl sm:text-4xl font-extrabold text-agro-dark">
+                            Fale Connosco
+                        </h2>
+                        <p class="text-gray-600 mt-3 text-sm sm:text-base leading-relaxed">
+                            Estamos prontos para apoiar a sua organização, cooperativa, projecto ou empreendimento. Envie uma mensagem directa pelo WhatsApp ou guarde o nosso contacto no seu telemóvel.
+                        </p>
+                    </div>
+
+                    <!-- Cartões de Acção Rápida -->
+                    <div class="space-y-3.5">
+                        <!-- Nota para o proprietário: Atualize o número de telefone abaixo (258826286774) pelo número real da empresa -->
+                        <div class="bg-white p-4 rounded-2xl border border-gray-200/80 shadow-sm flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-green-100 text-agro-primary flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs font-semibold text-gray-500 uppercase">WhatsApp &amp; Telefone</p>
+                                <p class="font-bold text-gray-900 text-sm sm:text-base">+258 82 628 6774 <span class="text-xs font-normal text-amber-700">(Atualizar número)</span></p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-4 rounded-2xl border border-gray-200/80 shadow-sm flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs font-semibold text-gray-500 uppercase">Correio Electrónico</p>
+                                <p class="font-bold text-gray-900 text-sm sm:text-base">agrolink.consultoria@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-4 rounded-2xl border border-gray-200/80 shadow-sm flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-agro-light text-agro-dark flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs font-semibold text-gray-500 uppercase">Localização</p>
+                                <p class="font-bold text-gray-900 text-sm sm:text-base">Chimoio-Manica-Moçambique</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Botões de Cartão Digital (vCard + Código QR) -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                        <button onclick="downloadVCard()" class="py-3.5 px-4 rounded-xl bg-agro-dark hover:bg-agro-primary text-white font-semibold text-sm shadow-sm transition-all flex items-center justify-center gap-2 cursor-pointer">
+                            <i class="fa-solid fa-address-book"></i>
+                            <span>Guardar Contacto (.vcf)</span>
+                        </button>
+                        <button onclick="openQrModal()" class="py-3.5 px-4 rounded-xl bg-white hover:bg-amber-50 text-agro-dark border border-agro-gold font-semibold text-sm shadow-sm transition-all flex items-center justify-center gap-2 cursor-pointer">
+                            <i class="fa-solid fa-qrcode text-agro-gold"></i>
+                            <span>Gerar / Ver QR Code</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Coluna Direita: Formulário Inteligente que Envia para o WhatsApp -->
+                <div class="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-10 shadow-soft border border-gray-200/80">
+                    <h3 class="text-xl sm:text-2xl font-bold text-agro-dark mb-2">
+                        Solicitar Proposta ou Informações
+                    </h3>
+                    <p class="text-xs sm:text-sm text-gray-500 mb-6">
+                        Preencha os campos abaixo e será redirecionado automaticamente para o nosso WhatsApp com a sua mensagem pronta a enviar.
+                    </p>
+
+                    <form id="whatsapp-form" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="visitor-name" class="block text-xs font-bold text-gray-700 uppercase tracking-wide mb-1.5">Seu Nome / Instituição *</label>
+                                <input type="text" id="visitor-name" required placeholder="Ex: João Silva / Cooperativa..." class="w-full px-4 py-3 rounded-xl border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-agro-primary">
+                            </div>
+                            <div>
+                                <label for="visitor-area" class="block text-xs font-bold text-gray-700 uppercase tracking-wide mb-1.5">Área de Interesse *</label>
+                                <select id="visitor-area" class="w-full px-4 py-3 rounded-xl border border-gray-300 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-agro-primary">
+                                    <option value="Consultoria e Gestão">1. Consultoria e Gestão</option>
+                                    <option value="Agricultura, Agronegócio e Produção Animal">2. Agricultura, Agronegócio e Produção Animal</option>
+                                    <option value="Educação, Formação e Desenvolvimento de Capacidades">3. Educação, Formação e Capacidades</option>
+                                    <option value="Tecnologia, Inovação e Serviços Técnicos">4. Tecnologia, Inovação e Serviços Técnicos</option>
+                                    <option value="Desenvolvimento Comunitário, Género e Inclusão Social">5. Desenvolvimento Comunitário e Inclusão</option>
+                                    <option value="Administração, Finanças e Serviços Corporativos">6. Administração, Finanças e Corporativo</option>
+                                    <option value="Informações Gerais / Parcerias">Outro / Informações Gerais</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="visitor-message" class="block text-xs font-bold text-gray-700 uppercase tracking-wide mb-1.5">Como podemos ajudar? *</label>
+                            <textarea id="visitor-message" rows="4" required placeholder="Descreva brevemente o serviço, projecto ou consultoria que procura..." class="w-full px-4 py-3 rounded-xl border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-agro-primary"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 px-6 rounded-xl bg-[#25D366] hover:bg-[#1ebe5d] text-white font-bold text-base shadow-md transition-all flex items-center justify-center gap-2.5 cursor-pointer">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            <span>Enviar Mensagem pelo WhatsApp</span>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= RODAPÉ INSTITUCIONAL COM PILARES DE IMPACTO ================= -->
+    <footer class="bg-agro-dark text-white">
+        <!-- Faixa Superior dos 4 Pilares de Impacto -->
+        <div class="border-b border-white/15 bg-[#0F3826]">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                    <div class="flex items-center justify-center gap-2.5 py-2">
+                        <i class="fa-solid fa-seedling text-agro-gold text-lg"></i>
+                        <span class="font-heading font-bold text-sm sm:text-base">Mais produção</span>
+                    </div>
+                    <div class="flex items-center justify-center gap-2.5 py-2">
+                        <i class="fa-solid fa-book-open text-agro-gold text-lg"></i>
+                        <span class="font-heading font-bold text-sm sm:text-base">Mais educação</span>
+                    </div>
+                    <div class="flex items-center justify-center gap-2.5 py-2">
+                        <i class="fa-solid fa-people-group text-agro-gold text-lg"></i>
+                        <span class="font-heading font-bold text-sm sm:text-base">Mais inclusão</span>
+                    </div>
+                    <div class="flex items-center justify-center gap-2.5 py-2">
+                        <i class="fa-solid fa-chart-line text-agro-gold text-lg"></i>
+                        <span class="font-heading font-bold text-sm sm:text-base">Mais desenvolvimento</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Conteúdo Principal do Rodapé -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+                <div>
+                    <p class="font-heading font-extrabold text-xl text-white">
+                        Agro<span class="text-agro-gold">Link</span> &amp; Consultoria, EI
+                    </p>
+                    <p class="text-sm text-amber-200 italic mt-1">
+                        “Ligando o campo ao desenvolvimento.”
+                    </p>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-6 text-xs sm:text-sm text-gray-300">
+                    <a href="#inicio" class="hover:text-white transition-colors">Início</a>
+                    <a href="#identidade" class="hover:text-white transition-colors">Missão &amp; Valores</a>
+                    <a href="#areas" class="hover:text-white transition-colors">Áreas de Actuação</a>
+                    <a href="#organograma" class="hover:text-white transition-colors">Organograma</a>
+                    <a href="#contactos" class="hover:text-white transition-colors">Contactos</a>
+                </div>
+            </div>
+
+            <div class="mt-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-400">
+                <p>&copy; <span id="current-year"></span> AgroLink &amp; Consultoria, EI. Todos os direitos reservados.</p>
+                <p>Desenvolvido para acesso rápido via Código QR.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= BOTÃO FLUTUANTE WHATSAPP ================= -->
+    <a href="#contactos" aria-label="Contactar via WhatsApp" class="fixed bottom-5 right-5 z-40 w-14 h-14 rounded-full bg-[#25D366] hover:bg-[#1ebe5d] text-white shadow-xl flex items-center justify-center text-2xl transition-transform hover:scale-110">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- ================= MODAL GERADOR DE CÓDIGO QR DA PÁGINA ================= -->
+    <div id="qr-modal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl relative animate-fade-in">
+            <button onclick="closeQrModal()" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-600 flex items-center justify-center cursor-pointer" aria-label="Fechar">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="text-center space-y-3">
+                <span class="inline-block px-3 py-1 rounded-full bg-agro-light text-agro-primary text-xs font-bold uppercase">
+                    Cartão Digital &amp; Impressão
+                </span>
+                <h3 class="text-xl font-extrabold text-agro-dark">Código QR Institucional</h3>
+                <p class="text-xs sm:text-sm text-gray-600">
+                    Aponte a câmara do telemóvel para aceder diretamente ao website da <strong>AgroLink &amp; Consultoria, EI</strong> ou descarregue a imagem para imprimir.
+                </p>
+            </div>
+
+            <!-- Campo para personalizar o URL antes de gerar/imprimir -->
+            <div class="mt-4">
+                <label for="qr-url-input" class="block text-xs font-semibold text-gray-600 mb-1">Endereço (URL) do Website:</label>
+                <div class="flex gap-2">
+                    <input type="url" id="qr-url-input" class="w-full px-3 py-2 rounded-xl border border-gray-300 text-xs text-gray-800 focus:outline-none focus:ring-2 focus:ring-agro-primary" placeholder="https://www.agrolinkconsultoria.co.mz">
+                    <button onclick="generateQRCode()" class="px-3.5 py-2 rounded-xl bg-agro-primary text-white text-xs font-semibold hover:bg-agro-dark cursor-pointer shrink-0">
+                        Atualizar
+                    </button>
+                </div>
+            </div>
+
+            <!-- Contentor onde o Código QR é desenhado -->
+            <div class="my-6 flex flex-col items-center justify-center p-5 bg-agro-light/50 rounded-2xl border-2 border-dashed border-agro-primary/30">
+                <div id="qrcode-container" class="bg-white p-3 rounded-xl shadow-sm"></div>
+                <p class="text-xs font-bold text-agro-dark mt-3">AgroLink &amp; Consultoria, EI</p>
+                <p class="text-[11px] text-gray-500 italic">Ligando o campo ao desenvolvimento.</p>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-3">
+                <button onclick="downloadQRImage()" class="w-full py-3 px-4 rounded-xl bg-agro-gold hover:bg-amber-600 text-white font-bold text-sm shadow-sm flex items-center justify-center gap-2 cursor-pointer">
+                    <i class="fa-solid fa-download"></i>
+                    <span>Descarregar QR (PNG)</span>
+                </button>
+                <button onclick="closeQrModal()" class="w-full sm:w-auto py-3 px-4 rounded-xl bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold text-sm cursor-pointer">
+                    Fechar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Caixa de Notificação Toast (Substitui alert()) -->
+    <div id="toast-box" class="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 hidden bg-agro-dark text-white px-5 py-3 rounded-xl shadow-lg text-sm font-medium flex items-center gap-2.5">
+        <i class="fa-solid fa-circle-check text-amber-300"></i>
+        <span id="toast-message">Acção concluída!</span>
+    </div>
+
+    <!-- ================= SCRIPTS DE INTERACTIVIDADE ================= -->
+    <script>
+        // CONFIGURAÇÃO DA EMPRESA (Edite aqui os dados reais da AgroLink quando publicar)
+        const COMPANY_CONFIG = {
+            name: "AgroLink & Consultoria, EI",
+            slogan: "Ligando o campo ao desenvolvimento.",
+            // Coloque aqui o número oficial de WhatsApp com código do país (258 para Moçambique), sem '+' ou espaços:
+            whatsappNumber: "258826286774", 
+            email: "agrolink.consultoria@gmail.com",
+            defaultWebsite: "https://cheerful-donut-2589c5.netlify.app"
+        };
+
+        // Atualiza o ano no rodapé
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Função para mostrar notificação elegante (sem usar alert)
+        function showToast(message) {
+            const toast = document.getElementById('toast-box');
+            const toastMsg = document.getElementById('toast-message');
+            toastMsg.textContent = message;
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 3500);
+        }
+
+        // Toggle do Menu Mobile
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Pesquisa/Filtro em tempo real nos 6 Pilares de Actuação
+        const searchInput = document.getElementById('service-search');
+        const pillarCards = document.querySelectorAll('.pillar-card');
+        const noResults = document.getElementById('no-results');
+
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase().trim();
+            let visibleCount = 0;
+
+            pillarCards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                if (text.includes(query)) {
+                    card.classList.remove('hidden');
+                    visibleCount++;
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+
+            if (visibleCount === 0) {
+                noResults.classList.remove('hidden');
+            } else {
+                noResults.classList.add('hidden');
+            }
+        });
+
+        // Selecionar automaticamente uma área ao clicar no botão do cartão e rolar até ao formulário
+        function inquireArea(areaName) {
+            const areaSelect = document.getElementById('visitor-area');
+            for (let i = 0; i < areaSelect.options.length; i++) {
+                if (areaSelect.options[i].value.includes(areaName.substring(0, 15))) {
+                    areaSelect.selectedIndex = i;
+                    break;
+                }
+            }
+            const msgBox = document.getElementById('visitor-message');
+            msgBox.value = `Olá! Acedi ao website da AgroLink & Consultoria, EI e gostaria de obter mais informações sobre os serviços da área de "${areaName}".`;
+            document.getElementById('contactos').scrollIntoView({ behavior: 'smooth' });
+            showToast(`Área "${areaName}" selecionada no formulário.`);
+        }
+
+        // Submissão do formulário para o WhatsApp
+        document.getElementById('whatsapp-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('visitor-name').value.trim();
+            const area = document.getElementById('visitor-area').value;
+            const message = document.getElementById('visitor-message').value.trim();
+
+            const fullText = `Olá *${COMPANY_CONFIG.name}*!%0A%0A*Nome/Instituição:* ${encodeURIComponent(name)}%0A*Área de Interesse:* ${encodeURIComponent(area)}%0A*Mensagem:* ${encodeURIComponent(message)}`;
+            const waUrl = `https://wa.me/${COMPANY_CONFIG.whatsappNumber}?text=${fullText}`;
+            
+            window.open(waUrl, '_blank', 'noopener,noreferrer');
+        });
+
+        // Gerar e Descarregar Ficheiro de Contacto (vCard .vcf)
+        function downloadVCard() {
+            const vcardContent = [
+                "BEGIN:VCARD",
+                "VERSION:3.0",
+                `N:Consultoria;AgroLink;;;`,
+                `FN:${COMPANY_CONFIG.name}`,
+                `ORG:${COMPANY_CONFIG.name}`,
+                `TITLE:${COMPANY_CONFIG.slogan}`,
+                `TEL;TYPE=WORK,VOICE:+${COMPANY_CONFIG.whatsappNumber}`,
+                `EMAIL;TYPE=PREF,INTERNET:${COMPANY_CONFIG.email}`,
+                `URL:${COMPANY_CONFIG.defaultWebsite}`,
+                "ADR;TYPE=WORK:;;;;;;Moçambique",
+                "END:VCARD"
+            ].join("\n");
+
+            const blob = new Blob([vcardContent], { type: "text/vcard;charset=utf-8" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "AgroLink_Consultoria_EI.vcf";
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            showToast("Cartão de contacto (.vcf) descarregado!");
+        }
+
+        // Gestão do Modal de Código QR
+        const qrModal = document.getElementById('qr-modal');
+        const qrUrlInput = document.getElementById('qr-url-input');
+        const qrContainer = document.getElementById('qrcode-container');
+
+        function openQrModal() {
+            qrModal.classList.remove('hidden');
+            // Se estiver hospedado online, usa o URL atual; caso contrário, usa o domínio padrão
+            const currentUrl = window.location.href.startsWith('http') 
+                ? window.location.href 
+                : COMPANY_CONFIG.defaultWebsite;
+            if (!qrUrlInput.value) {
+                qrUrlInput.value = currentUrl;
+            }
+            generateQRCode();
+        }
+
+        function closeQrModal() {
+            qrModal.classList.add('hidden');
+        }
+
+        function generateQRCode() {
+            const urlToEncode = qrUrlInput.value.trim() || COMPANY_CONFIG.defaultWebsite;
+            qrContainer.innerHTML = "";
+            new QRCode(qrContainer, {
+                text: urlToEncode,
+                width: 190,
+                height: 190,
+                colorDark: "#14452F", // Verde Escuro da marca AgroLink
+                colorLight: "#FFFFFF",
+                correctLevel: QRCode.CorrectLevel.H
+            });
+        }
+
+        function downloadQRImage() {
+            const canvas = qrContainer.querySelector('canvas');
+            const img = qrContainer.querySelector('img');
+            let dataUrl = "";
+
+            if (canvas) {
+                dataUrl = canvas.toDataURL("image/png");
+            } else if (img) {
+                dataUrl = img.src;
+            }
+
+            if (dataUrl) {
+                const link = document.createElement('a');
+                link.download = 'QRCode_AgroLink_Consultoria.png';
+                link.href = dataUrl;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                showToast("Imagem PNG do Código QR descarregada!");
+            }
+        }
+    </script>
+</body>
+</html>
